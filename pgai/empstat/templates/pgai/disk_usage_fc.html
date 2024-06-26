@@ -1,0 +1,21 @@
+{% load static %}
+
+<div class="homebutton">
+    <a href="{% url 'forecasting' %}">Back</a>
+    </div>
+
+<h1>Disk Usage Capacity Planing</h1>
+
+<section>
+    <img src="{% static 'pgai/'|add:chart_filename %}" alt="{{ Sales }} Disk Usage For 3 Years">
+</section>
+
+
+<section>
+    <img src="{% static 'pgai/'|add:fc_chart %}" alt="{{ fc_chart }} Forecasted Disk Usage For Last 1 Year">
+</section>
+
+<section>
+
+    <h4>The disk usage can be reached to {{ max_capacity }} in next year. Please plan to procure required storage</h4>
+</section>

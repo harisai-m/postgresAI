@@ -1,0 +1,19 @@
+{% load static %}
+
+<div class="homebutton">
+    <a href="{% url 'forecasting' %}">Back</a>
+    </div>
+
+<h1>Shampoo Sales Forecasting</h1>
+
+<section>
+<img src="{% static 'pgai/'|add:chart_filename %}" alt="{{ Sales }} Shampoo Sales For 3 Years">
+</section>
+<section>
+<img src="{% static 'pgai/'|add:fc_chart %}" alt="{{ fc_chart }} Forecasted Shampoo Sales For Last 1 Year">
+</section>
+
+<section>
+    <h4>The Shampoo sales can reach 690, please be prepare for that and accomodate more resources.</h4>
+</section>
+

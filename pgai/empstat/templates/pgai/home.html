@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+
+<head>
+    <title>{{ project_title }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" >
+</head>
+<body>
+    
+    <div class="h1">
+        <h1>{{ project_title }}</h1>
+        <h3>{{ subtitle }}</h3>
+
+        <section>
+            <h2>Data Analysis</h2>
+            <p>{{ data_analysis_description }}</p>
+            <a href="{% url 'model_list' %}">Explore >>></a>
+        </section>
+
+        <section>
+            <h2>Forecasting</h2>
+            <p>{{ forecasting_description }}</p>
+            <a href="{% url 'forecasting' %}">Explore >>></a>
+        </section>
+    </div>
+</body>
+</html>

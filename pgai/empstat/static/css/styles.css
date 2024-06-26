@@ -1,0 +1,100 @@
+/* Apply styles to the body element */
+body {
+    background-image: url('images/elephants-walking.gif'); /* Replace 'path_to_your_background.gif' with the actual path to your GIF image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    text-align: center;
+    font-family: Arial, sans-serif; /* Choose an appropriate font-family */
+    color: #ffffff; /* Set text color to white */
+}
+
+body a {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    text-align: center;
+    font-family: Arial, sans-serif; /* Choose an appropriate font-family */
+    color: #ffffff; /* Set text color to white */
+}
+
+/* Style the h1 element (project title) */
+h1 {
+    font-size: 36px;
+    margin-top: 100px; /* Adjust as needed for vertical alignment */
+    color: #ffffff
+}
+
+/* Style the h3 element (subtitle) */
+h3 {
+    font-size: 24px;
+    color: #ffffff
+}
+
+/* Style the sections */
+section {
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black background to the sections */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: left;
+    
+}
+
+/* Style the section headings (h2) */
+section h2 {
+    font-size: 28px;
+    color: #ffffff; /* Set heading text color to white */
+}
+
+/* Style the section content (paragraphs and links) */
+section p {
+    font-size: 16px;
+    color: #ffffff; /* Set text color to white */
+    
+}
+
+section a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Set link background color */
+    color: #ffffff; /* Set link text color to white */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+section a:hover {
+    background-color: #0056b3; /* Change link background color on hover */
+}
+
+.homebutton {
+    right: 0px;
+    width: 125px;
+    padding-top: 20px;
+    padding-right: 20px;
+    position: fixed;
+    z-index: 2;}
+	
+.homebutton a {
+    display: block;
+    margin-bottom: 1em;
+    padding: 0.3em 1.25em;
+    border: 1px solid #c2c7cc;
+    font-family: 'Open-Sans', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.667em;
+    text-decoration: none;
+    color: #8a9199;
+    cursor: pointer;
+    background: #fff;
+    transition: color,border-color ease 0.3s;
+    border-radius: 2em;
+}
+.homebutton a:hover {
+    border-color: #42B6F3;
+    color: #42B6F3;
+    text-decoration: none;
+}

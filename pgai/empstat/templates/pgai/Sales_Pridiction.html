@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<div class="homebutton">
+    <a href="{% url 'forecasting' %}">Back</a>
+    </div>
+
+<head>
+    <title>Shampoo Sales Details</title>
+</head>
+<body>
+    <h1>Shampoo Sales Detail: {{ model_name }}</h1>
+    
+    <h2>Sample Data Frame</h2>
+    {{ data_frame|safe }}
+    
+    <h2>Summary Statistics</h2>
+    {{ describe|safe }}
+    
+    <h2>Data Frame Info</h2>
+    <pre>{{ info|safe }}</pre>
+    
+    <a href="{% url 'shampoo_sales_prediction' %}">Shampoo Sales Forecasting</a>
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<div class="homebutton">
+    <a href="{% url 'home'%}">Home</a>
+    </div>
+
+<head>
+    <title>Forecasting Abilities</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" >
+</head>
+<body>
+    <h3>Forecasting Abilities</h3>
+    
+    <section>
+        {% for model in models %}
+        <li>
+            <a href="{{ model.model_url }}">{{ model.model_name }}</a>
+        </li>
+        {% endfor %}
+    </section>
+
+
+</body>
+</html>

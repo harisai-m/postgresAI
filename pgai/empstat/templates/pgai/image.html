@@ -1,0 +1,12 @@
+{% load static %}
+
+<html>
+    <head>
+        <img src="pgai/department_chart.png"
+    </head>
+
+</html>
+
+
+<img src="{% static 'pgai/'|add:column_info.chart_filename %}" alt="{{ column_info.column_name }} Distinct Values Chart">
+<img src="{% static 'pgai/static/pgai/department_chart.png%}">

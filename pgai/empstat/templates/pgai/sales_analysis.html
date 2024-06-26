@@ -1,0 +1,52 @@
+{% load static %}
+
+<div class="homebutton">
+    <a href="{% url 'home' %}">Home</a>
+    </div>
+    
+
+<h1>Data Analysis</h1>
+
+{% if analysis_result %}
+    <table>
+        <thead>
+            <tr>
+                <th>Column Name</th>
+                <th>Column Type</th>
+                <th>Discrete String</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for column_info in analysis_result %}
+                <tr>
+                    <td>{{ column_info.column_name }}</td>
+                    <td>{{ column_info.column_type }}</td>
+                    <td>{% if column_info.is_discrete_string %}Yes{% else %}No{% endif %}</td>
+                    <td>{% if column_info.is_number %}Yes{% else %}No{% endif %}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+ 
+
+    {% for column_info in analysis_result %}
+        {% if column_info.is_discrete_to_show %}
+        <h2>{{ column_info.column_name }} Distinct Values</h2>
+            <img src="{% static 'pgai/'|add:column_info.chart_filename %}" alt="{{ column_info.column_name }} Distinct Values Chart">
+         
+        {% endif %}
+    {% endfor %}
+
+    {% for column_info in analysis_result %}
+        {% if column_info.timestamp_column and column_info.chart_filename %}
+            
+                <h2>{{ column_info.column_name }} Over year {{column_info.year}}</h2>
+                <img src="{% static 'pgai/'|add:column_info.chart_filename %}" alt="{{ column_info.column_name }} Over Time Chart">
+            
+        {% endif %}
+    {% endfor %}
+
+{% else %}
+    <p>{{ analysis_result }}</p>
+{% endif %}

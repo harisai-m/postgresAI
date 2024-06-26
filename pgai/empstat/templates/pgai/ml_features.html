@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<div class="homebutton">
+    <a href="{% url 'home' %}">Home</a>
+    </div>
+
+<head>
+    <title>Data Analysis</title>
+</head>
+<body>
+    <h1>Data Analysis</h1>
+    
+    {% for model_name, data in model_data.items %}
+    <h2>{{ model_name }}</h2>
+    
+    <h3>Sample Data Frame</h3>
+    {{ data.data_frame|safe }}
+    
+    <h3>Summary Statistics</h3>
+    {{ data.describe|safe }}
+    
+    <h3>Data Frame Info</h3>
+    <pre>{{ data.info|safe }}</pre>
+    
+    {% endfor %}
+</body>
+</html>

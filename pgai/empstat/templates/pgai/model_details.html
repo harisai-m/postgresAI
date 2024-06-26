@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<div class="homebutton">
+    <a href="{% url 'home' %}">Home</a>
+  
+    
+    </div>
+
+<head>
+    <title>Model Detail</title>
+</head>
+
+    <h1>Model Detail: {{ model_name }}</h1>
+    
+    <h2>Sample Data of {{ model_name }}</h2>
+    <p>{{ data_frame|safe }}</p>
+    
+    <h2>{{ model_name }} Summary Statistics</h2>
+    <p>{{ describe|safe }}</p>
+    
+    <h2> {{ model_name }} Info</h2>
+    <pre>{{ info|safe }}</pre>
+    
+    <section>
+        <a href="{% url 'data_analysis_model' model_name=model_name %}">Graphical Analysis</a>
+    </section>
+    
+    {% if model_name == "Sales" %}
+        <section>
+            <a href="{% url 'sales_analysis' %}">Time Series Analysis</a>
+        </section>
+        
+    {% endif %}
+
+    {% if model_name == "WeatherData" %}
+        <section>
+            <a href="{% url 'timeseries_analysis' %}">Time Series Analysis</a>
+        </section>
+        
+    {% endif %}
+
+    <section>
+        <a href="{% url 'model_list' %}">Back to Model List</a>
+    </section>
+
+</html>
